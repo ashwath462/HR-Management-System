@@ -1,0 +1,15 @@
+title HR Management System Sequence Diagram
+
+participant Admin
+participant Home Page
+participant Department/Employee Page
+
+activate Admin
+Admin->Home Page:Login/Register (Unsuccessful)
+Admin<--Home Page:Unsuccessful attempt (wrong credentials)
+Home Page->Department/Employee Page:Create New Employee/Dept or edit existing ones
+activate Home Page
+activate Department/Employee Page
+Home Page<--Department/Employee Page:Updated and saved successfully\n
+deactivate Department/Employee Page
+Admin<--Home Page:Logout\n\n

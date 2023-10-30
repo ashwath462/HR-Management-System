@@ -2,7 +2,7 @@ const Departdb = require('../model/Deparment_model')
 const uuid = require('uuid')
 exports.getAllDepartment=async(req,res)=>{
   try{
- const departement = await Departdb.find()
+  const departement = await Departdb.find()
     res.json(departement);
   }
   catch(err){
@@ -15,13 +15,13 @@ exports.createDepartment = async (req,res)=>{
       return
   }
   try{
-  const department = new Departdb({
+      const department = new Departdb({
         DepartmentId: uuid.v4().slice(0,4),
         DepartmentName:req.body.DepartmentName
       })
-  const data = await department.save()
-            res.status(201).json(data);
-    }   
+      const data = await department.save()
+                res.status(201).json(data);
+        }   
         catch(err){
         res.status(500).send('Error adding department to database');
         }
