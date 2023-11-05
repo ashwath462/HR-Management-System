@@ -63,8 +63,24 @@ export const HomePage = () => {
       },
     });
   };
+
+
+  function ValidateEmail(inputText){
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(inputText.match(mailformat)) return true;
+    else{
+      alert("You have entered an invalid email address!");
+      return false;
+    }
+  }
+
   const handleRegister = async (e)=>{
     e.preventDefault();
+    ValidateEmail(state.email);
+    if(state.password.length<6 || state.password.length>12){
+      alert("password length must be greater than 6 characters and less than 12 characters");
+      return;
+    }
     try {
       const response = await axios.post(API_URL.REGISTER,
         {

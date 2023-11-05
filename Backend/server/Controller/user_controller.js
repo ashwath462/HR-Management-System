@@ -43,9 +43,9 @@ exports.UserLogin = async (req, res) => {
             {expiresIn:'24h'},
             (err,token)=>{
                 if(err) throw err;
-                 res.status(200)
-                     .json({token,foundUser})
-                    })
+                  res.status(200)
+                    .json({token,foundUser})
+                  })
       }else{
     res.status(401).json('Invalid credentials.');
     }   
