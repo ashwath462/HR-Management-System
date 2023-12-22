@@ -13,6 +13,7 @@ exports.getAllEmployee= async (req,res)=>{
    if (!EmployeeName&& !Department && !Date_of_Joining && !PhotoFileName) {
      return res.status(400).json({ message: 'Content cannot be empty!' });
    }
+   
 try{
   const employee = new employedb({
     EmployeeId: uuid.v4().slice(0, 4),

@@ -92,7 +92,8 @@ export const HomePage = () => {
         navigate('/department')  
         window.location.reload();
     } catch (err) {
-      alert("Error While register please provide correct email and password ! "||err.response.data);
+      console.log({err});
+      alert(err.response.data.message || "Error While register please provide correct email and password ! ");
     }
   }
 
@@ -115,11 +116,11 @@ export const HomePage = () => {
   }
   return (
     <div className="homepage">
-      <h1 style={{color:"white", textAlign:"center"}}>Home Page</h1>
+      <h1 style={{color:"#1c2028", textAlign:"center", fontWeight:"900"}}>Welcome!</h1>
       <div className="modal" tabIndex="-1" id="exampleModal">
         <div className="modal-dialog">
           <div className="modal-content">
-            <div className="modal-header bg-info">
+            <div className="modal-header" style={{backgroundColor:"black", color:"antiquewhite"}}>
               <h3 className="modal-title">{state.modalTitle}</h3>
               <button
                 type="button"

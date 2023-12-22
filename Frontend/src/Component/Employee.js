@@ -228,7 +228,7 @@ export const EmpoyeePage = () => {
               <td data-title="Employee Name">{emp.EmployeeName}</td>
               <td data-title="Profile photo"><img className="rounded-circle profileImage" src={state.photoPath+emp.PhotoFileName} alt=""/></td>
               <td data-title="Department">{emp.Department}</td>
-              <td data-title="DOJ">{emp.Date_of_Joining}</td>
+              <td data-title="DOJ">{emp.Date_of_Joining.substring(0,10)}</td>
               <td data-title="Action">
                 <button
                   data-bs-toggle="modal"
